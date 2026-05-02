@@ -18,7 +18,9 @@ double Sub (double a,double b) {
     return a - b;
 }
 
-//mul
+double Mul (double a,double b) {
+	return a * b;
+}
 
 //div -> nanti kalo dibagi 0 error aja  (kalo var2 = 0 error)
 
