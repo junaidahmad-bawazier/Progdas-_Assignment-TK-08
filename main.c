@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 typedef enum {
-    add, sub, mul, //div
+    add, sub, //mul, //div
 } Calculator;
 
 typedef struct {
@@ -28,7 +28,7 @@ double hasil (Calc k) {
     switch (k.calculator) {
     case add: return Add(k.var1,k.var2);
     case sub: return Sub(k.var1,k.var2);
-    case mul: return Mul(k.var1,k.var2);
+    //mul
     //div
     }
 }
