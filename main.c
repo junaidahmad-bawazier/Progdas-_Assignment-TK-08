@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 typedef enum {
-    add, sub, //mul, //div
+    add, sub, mul, div
 } Calculator;
 
 typedef struct {
@@ -18,17 +18,25 @@ double Sub (double a,double b) {
     return a - b;
 }
 
-double Mul (double a,double b) {
-	return a * b;
+double Mul (double a, double b) {
+    return a * b;
 }
 
-//div -> nanti kalo dibagi 0 error aja  (kalo var2 = 0 error)
+//div
+double Div (double a, double b) {
+    if (b == 0) {
+        printf("Error: Division by zero is not allowed.\n");
+        return 0;
+    }
+    return a / b;
+}
 
 double hasil (Calc k) {
     switch (k.calculator) {
     case add: return Add(k.var1,k.var2);
     case sub: return Sub(k.var1,k.var2);
-    //mul
+    case mul: return Mul(k.var1,k.var2);
+    case div: return Div(k.var1,k.var2);
     //div
     }
 }
@@ -62,7 +70,7 @@ int main () {
 
         printf("Masukkan angka kedua : ");
         scanf("%lf", &kalkulator.var2);      
-        
+
         Hasil = hasil(kalkulator);
 
         printf("\nHasilnya adalah : %.2f", Hasil);
